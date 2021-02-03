@@ -10,7 +10,7 @@ const expressLayouts = require('express-ejs-layouts');
 
 // database connection
 const db = require('./config/mongoose');
-const User = require('./models/user');
+
 
 
 // middlewares
