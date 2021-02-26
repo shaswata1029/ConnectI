@@ -12,17 +12,27 @@ module.exports.profile = function(req, res) {
 }
 
 module.exports.signUp = function(req, res) {
-    return res.render('user_sign_up', {
-        title: "ConnectI | Sign Up"
-    })
+
+    if (req.isAuthenticated())
+        return res.redirect('/users/profile');
+    else {
+        return res.render('user_sign_up', {
+            title: "ConnectI | Sign Up"
+        });
+    }
 }
 
 // rendered the sign-up page
 
 module.exports.signIn = function(req, res) {
-    return res.render('user_sign_in', {
-        title: "ConnectI | Sign In"
-    })
+
+    if (req.isAuthenticated())
+        res.redirect('/users/profile');
+    else {
+        return res.render('user_sign_in', {
+            title: "ConnectI | Sign In"
+        });
+    }
 }
 
 // rendered the sign-in page
