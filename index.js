@@ -11,6 +11,9 @@ const expressLayouts = require('express-ejs-layouts');
 // database connection
 const db = require('./config/mongoose');
 
+const session = require('express-session');
+const passport = require('passport');
+const passportLocal = require('./config/passport-local-strategy');
 
 
 // middlewares
@@ -22,13 +25,37 @@ app.use(expressLayouts);
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
-// Use express router
-app.use('/', require('./routes/index'));
+
+
 
 
 // setting up view engines-ejs
 app.set('view engine', 'ejs');
 app.set('views', './views');
+
+
+// session cookies
+app.use(session({
+    name: 'ConnectI',
+    secret: 'blahsomething',
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: (1000 * 60 * 100)
+    }
+
+}));
+
+// using passport 
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(passport.setAuthenticatedUser);
+
+
+
+// Use express router
+app.use('/', require('./routes/index'));
+
 
 
 app.listen(port, function(err) {
