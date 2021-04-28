@@ -1,25 +1,29 @@
 <header>
-
-    <ul>
-        <% if(locals.user){ %>
-            <li>
-                <a href="/users/profile">
-                    <%= user.name %>-Go to Profile
-                </a>
-            </li>
-            <li>
-                <a href="/users/sign_out">Sign out</a>
-            </li>
-            <% }else{ %>
+    <div>
+        <img src="/images/ConnectI_icon.png"> ConnectI
+    </div>
+    <div>
+        <ul>
+            <% if(locals.user){ %>
                 <li>
-                    <a href="/users/sign_in">Sign In</a>
+                    <a href="/users/profile">
+                        <%= user.name %>-Go to Profile
+                    </a>
                 </li>
                 <li>
-                    <a href="/users/sign_up">Sign Up</a>
+                    <a href="/users/sign_out">Sign out</a>
                 </li>
+                <% }else{ %>
+                    <li>
+                        <a href="/users/sign_in">Sign In</a>
+                    </li>
+                    <li>
+                        <a href="/users/sign_up">Sign Up</a>
+                    </li>
 
-                <% } %>
+                    <% } %>
 
-    </ul>
+        </ul>
+    </div>
 
 </header>

@@ -1,0 +1,24 @@
+header {
+  height: 10vh;
+  color: white;
+  font-size: larger;
+  background-color: darkblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  header div {
+    margin: 5px 10px;
+    display: flex;
+    align-items: center; }
+    header div img {
+      width: 8vh;
+      height: 8vh; }
+    header div ul {
+      display: flex;
+      justify-content: space-between; }
+      header div ul li {
+        padding: 0px 5px;
+        list-style: none; }
+        header div ul li a {
+          color: white;
+          text-decoration: none; }

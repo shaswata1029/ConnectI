@@ -1,0 +1,30 @@
+header {
+    height: 10vh;
+    color: white;
+    font-size: larger;
+    background-color: darkblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    div {
+        margin: 5px 10px;
+        display: flex;
+        align-items: center;
+        img {
+            width: 8vh;
+            height: 8vh;
+        }
+        ul {
+            display: flex;
+            justify-content: space-between;
+            li {
+                padding: 0px 5px;
+                list-style: none;
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
